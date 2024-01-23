@@ -32,13 +32,13 @@ module.exports = {
   devServer: {
     proxy: {
       '/v1/api': {
-        target: 'https://did-portkey-test.portkey.finance',
+        target: 'http://192.168.67.179:5001',
         changeOrigin: true,
         pathRewrite: { '^/v1': '' },
         secure: true,
       },
       '/v2/api': {
-        target: 'https://aa-portkey-test.portkey.finance',
+        target: 'http://192.168.66.117:5577',
         changeOrigin: true,
         pathRewrite: { '^/v2': '' },
         secure: true,

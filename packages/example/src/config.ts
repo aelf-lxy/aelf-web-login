@@ -3,23 +3,15 @@ import { event$, setGlobalConfig } from 'aelf-web-login';
 const APPNAME = 'explorer.aelf.io';
 const WEBSITE_ICON = 'https://explorer.aelf.io/favicon.main.ico';
 const CHAIN_ID = 'tDVW';
-const NETWORK: string = 'TESTNET';
+const NETWORK: string = 'MAIN'; //'TESTNET';
 const IS_MAINNET = NETWORK === 'MAIN';
 // portkey ip docs: https://hoopox.feishu.cn/wiki/GjdWwSqc3imGYxkE85bc8KEFnFd
-const RPC_SERVER = 'https://explorer-test.aelf.io/chain';
+const RPC_SERVER = 'https://explorer.aelf.io/chain';
 
-const graphQLServer = !IS_MAINNET
-  ? 'https://dapp-portkey-test.portkey.finance'
-  : 'https://dapp-portkey.portkey.finance';
-
-const portkeyApiServer = !IS_MAINNET
-  ? 'https://did-portkey-test.portkey.finance'
-  : 'https://did-portkey.portkey.finance';
+const graphQLServer = 'http://192.168.67.67:8083/AElfIndexer_DApp';
 
 // did.config.setConfig
-export const connectUrl = !IS_MAINNET
-  ? 'https://auth-portkey-test.portkey.finance'
-  : 'https://auth-portkey.portkey.finance';
+export const connectUrl = 'http://192.168.66.62:8055/graphql';
 
 let portkeyScanUrl = `${graphQLServer}/Portkey_DID/PortKeyIndexerCASchema/graphql`;
 // portkeyScanUrl = '/AElfIndexer_DApp/PortKeyIndexerCASchema/graphql';
@@ -48,11 +40,13 @@ setGlobalConfig({
       },
     },
     portkeyV2: {
+      graphQLUrl: 'http://192.168.67.214:8083/AElfIndexer_DApp/PortKeyIndexerCASchema/graphql',
+      connectUrl: 'http://192.168.66.117:8080',
       requestDefaults: {
         baseURL: '/v2',
         timeout: 30000,
       },
-    },
+    } as any,
   } as any,
   aelfReact: {
     appName: APPNAME,
