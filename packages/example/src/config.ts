@@ -39,14 +39,15 @@ setGlobalConfig({
         websiteIcon: WEBSITE_ICON,
       },
     },
-    portkeyV2: {
-      graphQLUrl: 'http://192.168.67.214:8083/AElfIndexer_DApp/PortKeyIndexerCASchema/graphql',
-      connectUrl: 'http://192.168.66.117:8080',
-      requestDefaults: {
-        baseURL: '/v2',
-        timeout: 30000,
-      },
-    } as any,
+  } as any,
+  portkeyV2: {
+    networkType: NETWORK as any,
+    aphQLUrl: 'http://192.168.67.214:8083/AElfIndexer_DApp/PortKeyIndexerCASchema/graphql',
+    connectUrl: 'http://192.168.66.117:8080',
+    questDefaults: {
+      bseURL: '/v2',
+      tmeout: 30000,
+    },
   } as any,
   aelfReact: {
     appName: APPNAME,
