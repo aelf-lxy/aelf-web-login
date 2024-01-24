@@ -32,29 +32,29 @@ module.exports = {
   devServer: {
     proxy: {
       '/v1/api': {
-        target: 'https://did-portkey-test.portkey.finance',
+        target: 'http://192.168.66.203:5001',
         changeOrigin: true,
         pathRewrite: { '^/v1': '' },
         secure: true,
       },
       '/v2/api': {
-        target: 'https://aa-portkey-test.portkey.finance',
+        target: 'http://192.168.67.127:5001',
         changeOrigin: true,
         pathRewrite: { '^/v2': '' },
         secure: true,
       },
-      '/connect': {
-        target: 'https://auth-portkey-test.portkey.finance',
-        changeOrigin: true,
-        secure: true,
-      },
-      '/AElfIndexer_DApp/PortKeyIndexerCASchema': {
-        // source: '/AElfIndexer_DApp/:path*',
-        // target: 'http://192.168.67.172:8083',
-        target: 'https://dapp-portkey-test.portkey.finance',
-        changeOrigin: true,
-        secure: true,
-      },
+      // '/connect': {
+      //   target: 'https://auth-portkey-test.portkey.finance',
+      //   changeOrigin: true,
+      //   secure: true,
+      // },
+      // '/AElfIndexer_DApp/PortKeyIndexerCASchema': {
+      //   // source: '/AElfIndexer_DApp/:path*',
+      //   // target: 'http://192.168.67.172:8083',
+      //   target: 'https://dapp-portkey-test.portkey.finance',
+      //   changeOrigin: true,
+      //   secure: true,
+      // },
     },
   },
 };
