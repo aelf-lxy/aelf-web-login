@@ -2,7 +2,7 @@ import { event$, setGlobalConfig } from 'aelf-web-login';
 
 const APPNAME = 'explorer.aelf.io';
 const WEBSITE_ICON = 'https://explorer.aelf.io/favicon.main.ico';
-const CHAIN_ID = 'tDVW';
+const CHAIN_ID = 'AELF';
 const NETWORK: string = 'MAIN'; //'TESTNET';
 const IS_MAINNET = NETWORK === 'MAIN';
 // portkey ip docs: https://hoopox.feishu.cn/wiki/GjdWwSqc3imGYxkE85bc8KEFnFd
@@ -27,8 +27,8 @@ setGlobalConfig({
       loginMethodsOrder: ['Google', 'Telegram', 'Apple', 'Phone', 'Email'],
     },
     useLocalStorage: true,
-    graphQLUrl: portkeyScanUrl,
-    connectUrl: connectUrl,
+    graphQLUrl: 'http://192.168.67.67:8083/AElfIndexer_DApp/PortKeyIndexerCASchema/graphql',
+    connectUrl: 'http://192.168.67.179:8001',
     requestDefaults: {
       baseURL: '/v1',
       timeout: 30000,
@@ -42,11 +42,11 @@ setGlobalConfig({
   } as any,
   portkeyV2: {
     networkType: NETWORK as any,
-    aphQLUrl: 'http://192.168.67.214:8083/AElfIndexer_DApp/PortKeyIndexerCASchema/graphql',
+    graphQLUrl: 'http://192.168.67.214:8083/AElfIndexer_DApp/PortKeyIndexerCASchema/graphql',
     connectUrl: 'http://192.168.66.117:8080',
-    questDefaults: {
-      bseURL: '/v2',
-      tmeout: 30000,
+    requestDefaults: {
+      baseURL: '/v2',
+      timeout: 30000,
     },
   } as any,
   aelfReact: {

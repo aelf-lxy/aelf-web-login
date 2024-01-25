@@ -43,18 +43,18 @@ module.exports = {
         pathRewrite: { '^/v2': '' },
         secure: true,
       },
-      '/connect': {
-        target: 'https://auth-portkey-test.portkey.finance',
-        changeOrigin: true,
-        secure: true,
-      },
-      '/AElfIndexer_DApp/PortKeyIndexerCASchema': {
-        // source: '/AElfIndexer_DApp/:path*',
-        // target: 'http://192.168.67.172:8083',
-        target: 'https://dapp-portkey-test.portkey.finance',
-        changeOrigin: true,
-        secure: true,
-      },
+      // '/connect': {
+      //   target: 'https://auth-portkey-test.portkey.finance',
+      //   changeOrigin: true,
+      //   secure: true,
+      // },
+      // '/AElfIndexer_DApp/PortKeyIndexerCASchema': {
+      //   // source: '/AElfIndexer_DApp/:path*',
+      //   // target: 'http://192.168.67.172:8083',
+      //   target: 'https://dapp-portkey-test.portkey.finance',
+      //   changeOrigin: true,
+      //   secure: true,
+      // },
     },
   },
 };
