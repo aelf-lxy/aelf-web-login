@@ -1,7 +1,7 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import { ChainId } from '@portkey/types';
 import { IPortkeyProvider, Accounts, ChainIds, NetworkType, ProviderError, DappEvents } from '@portkey/provider-types';
-import { getConfig } from '../../config';
+import { event$, getConfig } from '../../config';
 import {
   CallContractParams,
   DiscoverInfo,
@@ -50,12 +50,23 @@ export function useDiscover({
 
   const chainIdsSync = useChainIdsSync(chainId, loginState, true, discoverProvider);
 
+  event$.useSubscription((value: any) => {
+    // init
+    setDiscoverDetected('unknown');
+    setTimeout(() => {
+      detect().catch((error: any) => {
+        console.log(error.message);
+      });
+    }, 0);
+  });
+
   const handleMultiVersionProvider = useCallback(
     async (
       provider: IPortkeyProvider,
       setProvider: React.Dispatch<React.SetStateAction<IPortkeyProvider | undefined>>,
     ) => {
       if (provider?.isConnected()) {
+        setDiscoverDetected('detected');
         return provider!;
       }
       const detectedProvider = await detectDiscoverProvider();
@@ -75,13 +86,16 @@ export function useDiscover({
     [],
   );
 
-  const detect = useCallback(async (): Promise<IPortkeyProvider> => {
-    const version = localStorage.getItem(WEB_LOGIN_VERSION);
-    if (version === 'v1') {
-      return handleMultiVersionProvider(discoverProviderV1!, setDiscoverProviderV1);
-    }
-    return handleMultiVersionProvider(discoverProvider!, setDiscoverProvider);
-  }, [discoverProvider, discoverProviderV1, handleMultiVersionProvider]);
+  const detect = useCallback(
+    async (changedVerison?: string): Promise<IPortkeyProvider> => {
+      const version = changedVerison || localStorage.getItem(WEB_LOGIN_VERSION);
+      if (version === 'v1') {
+        return handleMultiVersionProvider(discoverProviderV1!, setDiscoverProviderV1);
+      }
+      return handleMultiVersionProvider(discoverProvider!, setDiscoverProvider);
+    },
+    [discoverProvider, discoverProviderV1, handleMultiVersionProvider],
+  );
 
   useEffect(() => {
     detect().catch((error: any) => {
