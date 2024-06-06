@@ -8,12 +8,12 @@ Then the `package.json` will be like this
 
 ```JSON
 "dependencies": {
-    "@aelf-web-login/wallet-adapter-night-elf": "^0.0.2-alpha.7",
-    "@aelf-web-login/wallet-adapter-portkey-aa": "^0.0.2-alpha.7",
-    "@aelf-web-login/wallet-adapter-portkey-discover": "^0.0.2-alpha.7",
-    "@aelf-web-login/wallet-adapter-react": "^0.0.2-alpha.7",
-    "@aelf-web-login/wallet-adapter-base": "^0.0.2-alpha.7",
-    "@aelf-web-login/wallet-adapter-bridge": "^0.0.2-alpha.7",
+    "@aelf-web-login/wallet-adapter-night-elf": "^0.0.2-alpha.9",
+    "@aelf-web-login/wallet-adapter-portkey-aa": "^0.0.2-alpha.9",
+    "@aelf-web-login/wallet-adapter-portkey-discover": "^0.0.2-alpha.9",
+    "@aelf-web-login/wallet-adapter-react": "^0.0.2-alpha.9",
+    "@aelf-web-login/wallet-adapter-base": "^0.0.2-alpha.9",
+    "@aelf-web-login/wallet-adapter-bridge": "^0.0.2-alpha.9",
 }
 ```
 
