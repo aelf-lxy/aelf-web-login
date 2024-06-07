@@ -186,6 +186,9 @@ importers:
       '@umijs/lint':
         specifier: ^4.0.0
         version: 4.2.10(eslint@8.57.0)(stylelint@14.16.1)(typescript@5.4.5)
+      antd:
+        specifier: 4.24.14
+        version: 4.24.14(react-dom@18.3.1)(react@18.3.1)
       dumi:
         specifier: ^2.2.13
         version: 2.3.8(@babel/core@7.24.7)(@types/react@18.3.3)(eslint@8.57.0)(prettier@3.3.1)(react-dom@18.3.1)(react@18.3.1)(stylelint@14.16.1)(typescript@5.4.5)(webpack@5.91.0)
