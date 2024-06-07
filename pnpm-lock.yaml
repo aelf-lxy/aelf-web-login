@@ -3244,7 +3244,7 @@ packages:
       postcss: '>=7.0.0'
       postcss-syntax: '>=0.36.2'
     dependencies:
-      '@babel/core': 7.23.6
+      '@babel/core': 7.24.7
       postcss: 8.4.38
       postcss-syntax: 0.36.2(postcss@8.4.38)
     transitivePeerDependencies:

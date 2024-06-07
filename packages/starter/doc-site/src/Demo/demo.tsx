@@ -7,6 +7,7 @@ import { IConfigProps } from '@aelf-web-login/wallet-adapter-bridge';
 import LoginDemo from './LoginDemo';
 import ContractDemo from './ContractDemo';
 import SignatureDemo from './SignatureDemo';
+// import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 const APP_NAME = 'explorer.aelf.io';
 const WEBSITE_ICON = 'https://explorer.aelf.io/favicon.main.ico';
