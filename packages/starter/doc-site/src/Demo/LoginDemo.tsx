@@ -63,7 +63,7 @@ const LoginDemo: React.FC = () => {
           lock
         </Button>
         <Button type="primary" onClick={onDisConnectBtnClickHandler} disabled={!isConnected}>
-          disConnect
+          disconnect
         </Button>
       </div>
       <div>

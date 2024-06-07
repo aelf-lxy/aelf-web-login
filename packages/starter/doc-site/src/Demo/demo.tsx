@@ -43,7 +43,7 @@ const didConfig = {
   // useLocalStorage: true,
 };
 
-const config = {
+const config: IConfigProps = {
   didConfig,
   baseConfig: {
     networkType: NETWORK_TYPE,
@@ -92,7 +92,7 @@ const config = {
       },
     }),
   ],
-} as IConfigProps;
+};
 
 const App: React.FC = () => {
   const bridgeAPI = init(config);

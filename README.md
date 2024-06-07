@@ -1,3 +1,9 @@
+# Introduction
+
+**aelf-web-login**: Modular React wallet collection and components for aelf applications.
+
+**website**: https://aelf-web-login.vercel.app/
+
 # Install
 
 ```Dockerfile
@@ -104,11 +110,11 @@ const wallets = [
   }),
 ]
 
-const config = {
+const config: IConfigProps = {
   didConfig,
   baseConfig,
   wallets
-} as IConfigProps;
+};
 ```
 
 # Usage
