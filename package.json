@@ -20,7 +20,7 @@
     "build:docs": "dumi build",
     "postinstall": "pnpm run husky:prepare",
     "changeset": "changeset",
-    "release:prepare": "npm run build",
+    "release:prepare": "pnpm run build",
     "release": "pnpm run release:prepare && changeset version && changeset publish",
     "release:alpha": "pnpm run release:prepare && changeset version --snapshot alpha && changeset publish --tag alpha",
     "release:beta": "pnpm run release:prepare && changeset version --snapshot beta && changeset publish --tag beta",
