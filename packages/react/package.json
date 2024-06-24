@@ -1,6 +1,6 @@
 {
   "name": "@aelf-web-login/wallet-adapter-react",
-  "version": "0.0.2-alpha.11",
+  "version": "0.0.2-alpha.26",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -27,7 +27,8 @@
   "dependencies": {
     "@aelf-web-login/wallet-adapter-bridge": "workspace:*",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "vconsole": "^3.15.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",
